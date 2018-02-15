@@ -48,5 +48,5 @@ rm -rf %{buildroot}%{_mandir}
 %{_libdir}/libjpeg.so.8*
 
 %changelog
-* Thu Feb 15 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.5.3-3
+* Thu Feb 15 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.5.3-3
 - Created compat package with API/ABI version 8 support. Based on libjpeg-turbo.
