@@ -13,6 +13,7 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  nasm
+BuildRequires:  gcc
 
 %description
 The compat-libjpeg8 package contains a library of functions for manipulating JPEG
