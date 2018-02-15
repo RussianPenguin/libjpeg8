@@ -19,15 +19,6 @@ BuildRequires:  gcc
 The compat-libjpeg8 package contains a library of functions for manipulating JPEG
 images.
 
-%package devel
-Summary:        Headers for the compat-libjpeg8 library
-Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Conflicts:      libjpeg-turbo-devel%{?_isa}
-
-%description devel
-This package contains header files necessary for developing programs which will
-manipulate JPEG files using the compat-libjpeg8 library.
-
 %prep
 %autosetup -n libjpeg-turbo-%{version} -p1
 chmod -x README.md
@@ -42,9 +33,12 @@ autoreconf -vif
 find %{buildroot} -name "*.la" -delete
 
 # We need only shared library for this compat package, so we will remove
-# all other installed by default make sequence executables.
+# all other installed by default make sequence files.
 rm -f %{buildroot}%{_bindir}/{cjpeg,djpeg,jpegtran,rdjpgcom,wrjpgcom}
-rm -rf %{buildroot}%{_mandir}*
+rm -f %{buildroot}%{_libdir}/libjpeg.so
+rm -rf %{buildroot}%{_libdir}/pkgconfig
+rm -rf %{buildroot}%{_includedir}
+rm -rf %{buildroot}%{_mandir}
 
 %ldconfig_scriptlets
 
@@ -52,16 +46,6 @@ rm -rf %{buildroot}%{_mandir}*
 %doc README.md ChangeLog.md
 %license LICENSE.md README.ijg
 %{_libdir}/libjpeg.so.8*
-
-%files devel
-%doc coderules.txt jconfig.txt libjpeg.txt structure.txt example.c
-%{_includedir}/jconfig*.h
-%{_includedir}/jerror.h
-%{_includedir}/jmorecfg.h
-%{_includedir}/jpegint.h
-%{_includedir}/jpeglib.h
-%{_libdir}/libjpeg.so
-%{_libdir}/pkgconfig/libjpeg.pc
 
 %changelog
 * Thu Feb 15 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.5.3-3
