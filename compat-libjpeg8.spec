@@ -40,15 +40,16 @@ autoreconf -vif
 %make_install
 find %{buildroot} -name "*.la" -delete
 
-# We need only library for this compat package, so we need to remove all
-# installed by default make sequence executables.
+# We need only shared library for this compat package, so we will remove
+# all other installed by default make sequence executables.
 rm -f %{buildroot}%{_bindir}/{cjpeg,djpeg,jpegtran,rdjpgcom,wrjpgcom}
 rm -rf %{buildroot}%{_mandir}*
 
 %ldconfig_scriptlets
 
 %files
-%doc README.md README.ijg ChangeLog.md
+%doc README.md ChangeLog.md
+%license LICENSE.md README.ijg
 %{_libdir}/libjpeg.so.8*
 
 %files devel
