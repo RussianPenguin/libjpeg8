@@ -21,6 +21,7 @@ images.
 
 %package devel
 Summary:        Headers for the compat-libjpeg8 library
+Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Conflicts:      libjpeg-turbo-devel%{?_isa}
 
 %description devel
