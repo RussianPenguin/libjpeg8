@@ -21,7 +21,7 @@ images.
 
 %package devel
 Summary:        Headers for the compat-libjpeg8 library
-Conflicts:      libjpeg-turbo-devel
+Conflicts:      libjpeg-turbo-devel%{?_isa}
 
 %description devel
 This package contains header files necessary for developing programs which will
