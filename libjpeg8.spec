@@ -1,11 +1,11 @@
-Name:           compat-libjpeg8
+Name:           libjpeg8
 Version:        1.5.3
 Release:        3%{?dist}
 Summary:        The MMX/SSE accelerated JPEG compression/decompression library
 License:        IJG
 URL:            http://sourceforge.net/projects/libjpeg-turbo
 
-Source0:        http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-%{version}.tar.gz
+Source0:        libjpeg-turbo-%{version}.tar.gz
 Patch0:         libjpeg-turbo14-noinst.patch
 Patch1:         libjpeg-turbo-header-files.patch
 
@@ -16,7 +16,7 @@ BuildRequires:  nasm
 BuildRequires:  gcc
 
 %description
-The compat-libjpeg8 package contains a library of functions for manipulating JPEG
+The libjpeg8 package contains a library of functions for manipulating JPEG
 images.
 
 %prep
